@@ -78,7 +78,7 @@ export default function IntroTrust() {
               }}
             >
               <img
-                src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=1200&q=80"
+                src="/images/careh.webp"
                 alt="Support worker and participant having a friendly, respectful care interaction"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />

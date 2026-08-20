@@ -58,7 +58,7 @@ export default function HighIntensityCare() {
             <div className="badge badge-copper" style={{ marginBottom: '1rem' }}>
               SPECIALISED CLINICAL CARE & DIGNITY
             </div>
-            <h1 style={{ color: 'var(--primary-teal)', marginBottom: '1.25rem', fontSize: 'clamp(2.2rem, 3.5vw, 3.4rem)' }}>
+            <h1 style={{ color: 'var(--primary-teal)', marginBottom: '1.25rem', fontSize: 'clamp(1.75rem, 2.7vw, 2.45rem)' }}>
               High-Intensity Daily Personal Activities
             </h1>
             <p style={{ fontSize: '1.15rem', color: 'var(--charcoal-muted)', lineHeight: '1.7', marginBottom: '2rem' }}>

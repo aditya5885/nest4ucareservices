@@ -372,7 +372,7 @@ export default function Navbar() {
         {/* Action Button */}
         <div style={{ display: 'none', alignItems: 'center', gap: '1rem' }} className="desktop-nav">
           <Link to="/contact" className="btn btn-primary btn-sm" style={{ padding: '0.625rem 1.4rem' }}>
-            <Heart size={16} fill="currentColor" opacity={0.3} />
+            <Heart size={16} fill="#EF4444" color="#EF4444" style={{ flexShrink: 0 }} />
             <span>Get Support</span>
           </Link>
         </div>
@@ -596,7 +596,7 @@ export default function Navbar() {
                   className="btn btn-primary"
                   style={{ width: '100%', justifyContent: 'center' }}
                 >
-                  <Heart size={18} />
+                  <Heart size={18} fill="#EF4444" color="#EF4444" style={{ flexShrink: 0 }} />
                   <span>Get Support</span>
                 </Link>
                 <a

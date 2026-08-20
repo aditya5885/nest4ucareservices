@@ -91,13 +91,13 @@ export default function ContactPage() {
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
               gap: '3.5rem',
-              alignItems: 'flex-start'
+              alignItems: 'stretch'
             }}
           >
             {/* Left Column: Contact Form */}
             <div>
               <div style={{ marginBottom: '2rem' }}>
-                <h2 style={{ color: 'var(--primary-teal)', fontSize: '1.85rem', marginBottom: '0.5rem' }}>
+                <h2 style={{ color: 'var(--primary-teal)', fontSize: '1.5rem', marginBottom: '0.5rem' }}>
                   Request Support or Make an Enquiry
                 </h2>
                 <p style={{ color: 'var(--charcoal-muted)', fontSize: '0.975rem' }}>
@@ -332,7 +332,7 @@ export default function ContactPage() {
             </div>
 
             {/* Right Column: Office Location & Quick Contact */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', height: '100%' }}>
               {/* Headquarters Details Card */}
               <div
                 className="card"
@@ -412,7 +412,9 @@ export default function ContactPage() {
                   overflow: 'hidden',
                   border: '1px solid rgba(48, 53, 54, 0.1)',
                   boxShadow: 'var(--shadow-md)',
-                  height: '280px'
+                  flex: 1,
+                  minHeight: '380px',
+                  display: 'flex'
                 }}
               >
                 <iframe
@@ -420,7 +422,7 @@ export default function ContactPage() {
                   src={CONTACT.mapsEmbedUrl}
                   width="100%"
                   height="100%"
-                  style={{ border: 0 }}
+                  style={{ border: 0, flex: 1, width: '100%', minHeight: '100%' }}
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"

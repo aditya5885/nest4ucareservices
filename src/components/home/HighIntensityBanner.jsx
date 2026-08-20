@@ -45,7 +45,7 @@ export default function HighIntensityBanner() {
               <span>SPECIALISED CLINICAL CARE</span>
             </div>
 
-            <h2 style={{ color: 'var(--primary-teal)', fontSize: 'clamp(1.8rem, 2.5vw, 2.4rem)', marginBottom: '1rem', lineHeight: '1.25' }}>
+            <h2 style={{ color: 'var(--primary-teal)', fontSize: 'clamp(1.45rem, 2vw, 1.95rem)', marginBottom: '1rem', lineHeight: '1.25' }}>
               High-Intensity Daily Personal Activities
             </h2>
 

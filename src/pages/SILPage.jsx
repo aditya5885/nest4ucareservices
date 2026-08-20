@@ -52,7 +52,7 @@ export default function SILPage() {
       <section
         style={{
           position: 'relative',
-          backgroundImage: `linear-gradient(180deg, rgba(14, 68, 67, 0.90) 0%, rgba(20, 93, 92, 0.85) 50%, rgba(14, 68, 67, 0.95) 100%), url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=2000&q=80')`,
+          backgroundImage: `linear-gradient(180deg, rgba(14, 68, 67, 0.90) 0%, rgba(20, 93, 92, 0.85) 50%, rgba(14, 68, 67, 0.95) 100%), url('/images/caregiver-support.jpg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           color: 'var(--cream)',
@@ -166,8 +166,8 @@ export default function SILPage() {
             <h1
               style={{
                 color: 'var(--white)',
-                fontSize: 'clamp(2.4rem, 4.8vw, 3.8rem)',
-                lineHeight: '1.15',
+                fontSize: 'clamp(1.85rem, 3.2vw, 2.65rem)',
+                lineHeight: '1.2',
                 fontWeight: 800,
                 margin: '0.25rem 0'
               }}
@@ -424,8 +424,8 @@ export default function SILPage() {
               <Home size={15} />
               <span>A PLACE TO CALL HOME</span>
             </div>
-            <h2 style={{ color: 'var(--primary-teal)', fontSize: 'clamp(2rem, 3.2vw, 2.75rem)', marginBottom: '1rem', lineHeight: '1.25' }}>
-              What Supported Living Looks Like with Nest4U
+            <h2 style={{ color: 'var(--primary-teal)', fontSize: 'clamp(1.45rem, 2.2vw, 2rem)', marginBottom: '1rem', lineHeight: '1.25' }}>
+              Core Foundations of Our SIL Support
             </h2>
             <p style={{ color: 'var(--charcoal-muted)', fontSize: '1.1rem', lineHeight: '1.7', maxWidth: '680px', margin: '0 auto' }}>
               We believe a home is a sanctuary where you feel safe, valued, and empowered to grow every single day with dedicated 24/7 assistance.

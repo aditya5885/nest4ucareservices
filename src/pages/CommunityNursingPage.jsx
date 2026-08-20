@@ -70,7 +70,7 @@ export default function CommunityNursingPage() {
       <section
         style={{
           position: 'relative',
-          backgroundImage: `linear-gradient(180deg, rgba(14, 68, 67, 0.90) 0%, rgba(20, 93, 92, 0.85) 50%, rgba(14, 68, 67, 0.95) 100%), url('https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=2000&q=80')`,
+          backgroundImage: `linear-gradient(180deg, rgba(28, 102, 101, 0.6) 0%, rgba(20, 93, 92, 0.85) 50%, rgba(14, 68, 67, 0.95) 100%), url('/images/heroM.webp')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           color: 'var(--cream)',
@@ -184,8 +184,8 @@ export default function CommunityNursingPage() {
             <h1
               style={{
                 color: 'var(--white)',
-                fontSize: 'clamp(2.4rem, 4.8vw, 3.8rem)',
-                lineHeight: '1.15',
+                fontSize: 'clamp(1.85rem, 3.2vw, 2.65rem)',
+                lineHeight: '1.2',
                 fontWeight: 800,
                 margin: '0.25rem 0'
               }}
@@ -470,7 +470,7 @@ export default function CommunityNursingPage() {
               <Stethoscope size={15} />
               <span>CLINICAL CAPABILITIES & SPECIALISED PROCEDURES</span>
             </div>
-            <h2 style={{ color: 'var(--primary-teal)', fontSize: 'clamp(2rem, 3.2vw, 2.75rem)', marginBottom: '1rem', lineHeight: '1.25' }}>
+            <h2 style={{ color: 'var(--primary-teal)', fontSize: 'clamp(1.45rem, 2.2vw, 2rem)', marginBottom: '1rem', lineHeight: '1.25' }}>
               Comprehensive In-Home Nursing Services
             </h2>
             <p style={{ color: 'var(--charcoal-muted)', fontSize: '1.1rem', lineHeight: '1.7', maxWidth: '680px', margin: '0 auto' }}>

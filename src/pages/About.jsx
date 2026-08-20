@@ -42,7 +42,7 @@ export default function About() {
           >
             <div>
               <div className="eyebrow">WHO WE ARE</div>
-              <h2 style={{ color: 'var(--primary-teal)', marginBottom: '1.25rem', fontSize: 'clamp(1.8rem, 2.5vw, 2.4rem)' }}>
+              <h2 style={{ color: 'var(--primary-teal)', marginBottom: '1.25rem', fontSize: 'clamp(1.45rem, 2vw, 1.95rem)' }}>
                 Care Shaped Around Your Life, Not Our Routine
               </h2>
               <p style={{ color: 'var(--charcoal)', lineHeight: '1.7', marginBottom: '1.25rem' }}>
@@ -52,20 +52,7 @@ export default function About() {
                 Whether providing high-intensity clinical care, supporting someone in their first shared living arrangement (SIL), or joining a participant for a weekend community outing across Moreton Bay, we bring warmth, empathy, and uncompromising safety standards to everything we do.
               </p>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-                  <CheckCircle2 size={18} style={{ color: 'var(--copper)' }} />
-                  <span style={{ fontWeight: 600, color: 'var(--charcoal)' }}>Local Caboolture team with deep Moreton Bay community roots</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-                  <CheckCircle2 size={18} style={{ color: 'var(--copper)' }} />
-                  <span style={{ fontWeight: 600, color: 'var(--charcoal)' }}>Carefully matched support workers sharing your values and interests</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-                  <CheckCircle2 size={18} style={{ color: 'var(--copper)' }} />
-                  <span style={{ fontWeight: 600, color: 'var(--charcoal)' }}>Strict clinical governance and safety compliance protocols</span>
-                </div>
-              </div>
+
 
               <Link to="/contact" className="btn btn-primary">
                 <span>Speak With Our Team</span>
@@ -83,7 +70,7 @@ export default function About() {
                 }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=1000&q=80"
+                  src="/images/nursing-hero.jpg"
                   alt="Support worker and participant having a friendly, engaging conversation"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />

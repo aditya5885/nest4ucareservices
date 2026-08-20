@@ -75,7 +75,7 @@ export default function CTASection({
             <span>Serving Caboolture & Moreton Bay</span>
           </div>
 
-          <h2 style={{ color: 'var(--white)', fontSize: 'clamp(2rem, 3.5vw, 3rem)', lineHeight: '1.2' }}>
+          <h2 style={{ color: 'var(--white)', fontSize: 'clamp(1.5rem, 2.4vw, 2.15rem)', lineHeight: '1.25' }}>
             {title}
           </h2>
 

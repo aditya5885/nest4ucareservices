@@ -194,7 +194,7 @@ export default function Hero() {
                 }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=1200&q=80"
+                  src="/images/hero-elderly.jpg"
                   alt="Support worker providing compassionate in-home care"
                   style={{
                     width: '100%',

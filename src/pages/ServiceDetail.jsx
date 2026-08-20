@@ -76,7 +76,7 @@ export default function ServiceDetail() {
                 )}
               </div>
 
-              <h1 style={{ color: 'var(--primary-teal)', marginBottom: '1rem', fontSize: 'clamp(2rem, 3.2vw, 3rem)' }}>
+              <h1 style={{ color: 'var(--primary-teal)', marginBottom: '1rem', fontSize: 'clamp(1.6rem, 2.4vw, 2.25rem)' }}>
                 {service.title}
               </h1>
 
