@@ -38,11 +38,23 @@ export default function Footer() {
                 src="/logo.webp"
                 alt="Nest4U Care Services"
                 style={{
-                  height: '62px',
+                  height: '96px',
                   width: 'auto',
-                  backgroundColor: 'rgba(255, 255, 255, 0.95)',
-                  padding: '6px 12px',
-                  borderRadius: '10px'
+                  maxWidth: '240px',
+                  objectFit: 'contain',
+                  backgroundColor: '#FFFFFF',
+                  padding: '8px 16px',
+                  borderRadius: '14px',
+                  boxShadow: '0 8px 20px rgba(0, 0, 0, 0.12)',
+                  transition: 'transform 0.25s ease, box-shadow 0.25s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = '0 12px 28px rgba(0, 0, 0, 0.18)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.12)';
                 }}
               />
             </Link>

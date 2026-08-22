@@ -4,6 +4,7 @@ import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
 import FloatingContact from './components/common/FloatingContact';
 import ScrollToTop from './components/common/ScrollToTop';
+import PageLoader from './components/common/PageLoader';
 
 // Pages
 import Home from './pages/Home';
@@ -23,6 +24,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <PageLoader />
       <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         {/* Sticky Header Navigation */}
         <Navbar />

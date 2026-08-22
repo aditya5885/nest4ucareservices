@@ -113,7 +113,48 @@ export default function Navbar() {
         Skip to main content
       </a>
 
-      <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '80px' }}>
+      <div className="container navbar-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <style>{`
+          .navbar-container {
+            padding: 8px 0;
+          }
+          .navbar-logo-img {
+            height: 100px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+            transition: height 0.25s ease, transform 0.25s ease;
+          }
+          @media (max-width: 991px) {
+            .navbar-container {
+              padding: 6px 0;
+            }
+            .navbar-logo-img {
+              height: 60px;
+            }
+          }
+          @media (max-width: 768px) {
+            .navbar-container {
+              padding: 5px 0;
+            }
+            .navbar-logo-img {
+              height: 50px;
+            }
+          }
+          @media (max-width: 480px) {
+            .navbar-container {
+              padding: 4px 0;
+            }
+            .navbar-logo-img {
+              height: 44px;
+            }
+          }
+          @media (min-width: 1060px) {
+            .desktop-nav { display: flex !important; }
+            .mobile-toggle-btn { display: none !important; }
+          }
+        `}</style>
+
         {/* Brand Logo */}
         <Link
           to="/"
@@ -123,7 +164,7 @@ export default function Navbar() {
           <img
             src="/logo.webp"
             alt="Nest4U Care Services Logo"
-            style={{ height: '54px', width: 'auto', objectFit: 'contain' }}
+            className="navbar-logo-img"
           />
         </Link>
 
@@ -133,12 +174,6 @@ export default function Navbar() {
           className="desktop-nav"
           aria-label="Main Navigation"
         >
-          <style>{`
-            @media (min-width: 1060px) {
-              .desktop-nav { display: flex !important; }
-              .mobile-toggle-btn { display: none !important; }
-            }
-          `}</style>
 
           <NavLink
             to="/"
