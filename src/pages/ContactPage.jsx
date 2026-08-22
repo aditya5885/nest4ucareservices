@@ -89,8 +89,8 @@ export default function ContactPage() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '3.5rem',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
+              gap: 'clamp(2rem, 4vw, 3.5rem)',
               alignItems: 'stretch'
             }}
           >
@@ -176,7 +176,7 @@ export default function ContactPage() {
                   </div>
 
                   {/* Phone & Email Grid */}
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '1.25rem' }}>
                     <div className="form-group">
                       <label htmlFor="phone" className="form-label">
                         Phone Number <span className="required">*</span>

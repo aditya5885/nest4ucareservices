@@ -50,14 +50,14 @@ export default function ServiceDetail() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '3rem',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
+              gap: 'clamp(2rem, 4vw, 3rem)',
               alignItems: 'center'
             }}
           >
             {/* Left: Info */}
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
                 <span
                   className="badge"
                   style={{
@@ -88,7 +88,7 @@ export default function ServiceDetail() {
                 {service.overview}
               </p>
 
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
+              <div className="btn-stack-mobile" style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
                 <Link to={`/contact?service=${encodeURIComponent(service.title)}`} className="btn btn-primary btn-lg">
                   <span>Enquire About This Service</span>
                   <ArrowRight size={18} />
@@ -107,7 +107,7 @@ export default function ServiceDetail() {
                   borderRadius: '24px',
                   overflow: 'hidden',
                   boxShadow: 'var(--shadow-lg)',
-                  border: '6px solid var(--white)',
+                  border: 'clamp(4px, 1.5vw, 6px) solid var(--white)',
                   aspectRatio: '4/3'
                 }}
               >
@@ -128,8 +128,8 @@ export default function ServiceDetail() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '3.5rem'
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
+              gap: 'clamp(2rem, 4vw, 3.5rem)'
             }}
           >
             {/* Left Column: What It Involves & How We Support */}
@@ -166,9 +166,9 @@ export default function ServiceDetail() {
               {service.specialisedAreas && (
                 <div>
                   <h3 style={{ color: 'var(--primary-teal)', fontSize: '1.5rem', marginBottom: '1.25rem' }}>
-                    Specific Clinical & High-Intensity Procedures Managed
+                    Specific Clinical &amp; High-Intensity Procedures Managed
                   </h3>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.25rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '1.25rem' }}>
                     {service.specialisedAreas.map((area, idx) => (
                       <div
                         key={idx}

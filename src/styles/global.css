@@ -93,6 +93,7 @@ html {
   font-size: 16px;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: clip;
 }
 
 body {
@@ -105,7 +106,9 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;
+  position: relative;
+  width: 100%;
 }
 
 /* Headings */
@@ -115,27 +118,31 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.25;
   color: var(--primary-teal);
   letter-spacing: -0.02em;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 h1 {
-  font-size: clamp(1.85rem, 3vw + 0.5rem, 2.75rem); /* was clamp(2.25rem, 4vw + 1rem, 3.75rem) */
+  font-size: clamp(1.75rem, 3.5vw + 0.5rem, 2.75rem);
   font-weight: 800;
 }
 
 h2 {
-  font-size: clamp(1.45rem, 2vw + 0.4rem, 2.15rem); /* was clamp(1.85rem, 3vw + 0.8rem, 2.75rem) */
+  font-size: clamp(1.35rem, 2.2vw + 0.35rem, 2.15rem);
 }
 
 h3 {
-  font-size: clamp(1.2rem, 1.3vw + 0.3rem, 1.55rem); /* was clamp(1.35rem, 1.8vw + 0.6rem, 1.75rem) */
+  font-size: clamp(1.15rem, 1.4vw + 0.3rem, 1.55rem);
 }
 
 h4 {
-  font-size: 1.15rem;
+  font-size: clamp(1.05rem, 1.1vw + 0.2rem, 1.25rem);
 }
 
 p {
   margin-bottom: 1rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 p:last-child {
@@ -152,7 +159,7 @@ a:hover {
   color: var(--copper);
 }
 
-img, svg {
+img, svg, video, iframe {
   display: block;
   max-width: 100%;
   height: auto;
@@ -169,8 +176,8 @@ button, input, textarea, select {
   max-width: var(--container-max);
   margin-left: auto;
   margin-right: auto;
-  padding-left: clamp(1.25rem, 3vw, 2.5rem);
-  padding-right: clamp(1.25rem, 3vw, 2.5rem);
+  padding-left: clamp(1rem, 3.5vw, 2.5rem);
+  padding-right: clamp(1rem, 3.5vw, 2.5rem);
 }
 
 .container-narrow {
@@ -178,19 +185,22 @@ button, input, textarea, select {
   max-width: var(--container-narrow);
   margin-left: auto;
   margin-right: auto;
-  padding-left: clamp(1.25rem, 3vw, 2.5rem);
-  padding-right: clamp(1.25rem, 3vw, 2.5rem);
+  padding-left: clamp(1rem, 3.5vw, 2.5rem);
+  padding-right: clamp(1rem, 3.5vw, 2.5rem);
 }
 
 .section {
-  padding-top: clamp(3.5rem, 6vw, 6rem);
-  padding-bottom: clamp(3.5rem, 6vw, 6rem);
+  padding-top: clamp(2.75rem, 5vw, 5.5rem);
+  padding-bottom: clamp(2.75rem, 5vw, 5.5rem);
   position: relative;
+  overflow-x: clip;
 }
 
 .section-sm {
-  padding-top: clamp(2.5rem, 4vw, 4rem);
-  padding-bottom: clamp(2.5rem, 4vw, 4rem);
+  padding-top: clamp(1.75rem, 3.5vw, 3.5rem);
+  padding-bottom: clamp(1.75rem, 3.5vw, 3.5rem);
+  position: relative;
+  overflow-x: clip;
 }
 
 /* Background Color Modifiers */
@@ -459,6 +469,119 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   pointer-events: none;
   z-index: 0;
   opacity: 0.15;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+/* Responsive Grid Utilities */
+.grid-responsive-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.grid-responsive-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.grid-responsive-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* Universal Mobile Enhancements */
+@media (max-width: 991px) {
+  .grid-responsive-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-responsive-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-responsive-2,
+  .grid-responsive-3,
+  .grid-responsive-4 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .card {
+    padding: 1.35rem 1.15rem;
+    border-radius: var(--radius-md);
+  }
+
+  .btn {
+    padding: 0.75rem 1.4rem;
+    font-size: 0.95rem;
+  }
+
+  .btn-lg {
+    padding: 0.85rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  /* Form elements on mobile - minimum 16px to prevent iOS auto-zoom */
+  .form-input, .form-textarea, .form-select {
+    font-size: 16px !important;
+    padding: 0.8rem 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .btn-stack-mobile {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .btn-stack-mobile .btn {
+    width: 100% !important;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+  }
+
+  /* Floating elements adjustments */
+  .floating-contact-container {
+    bottom: 16px !important;
+    right: 16px !important;
+    gap: 10px !important;
+  }
+
+  .floating-contact-container a {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .floating-contact-container svg {
+    width: 22px !important;
+    height: 22px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    white-space: normal;
+    text-align: center;
+    word-break: break-word;
+  }
+
+  .container, .container-narrow {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .badge {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.65rem;
+  }
 }
 
 /* Reduced Motion Override */

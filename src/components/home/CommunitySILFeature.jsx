@@ -17,8 +17,8 @@ export default function CommunitySILFeature() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '2rem'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
+            gap: '1.75rem'
           }}
         >
           {/* Card 1: Supported Independent Living (SIL) */}

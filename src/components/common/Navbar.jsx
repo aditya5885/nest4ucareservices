@@ -95,70 +95,82 @@ export default function Navbar() {
 
   return (
     <header
+      className="navbar-header"
       style={{
         position: 'sticky',
         top: 0,
         left: 0,
         right: 0,
-        zIndex: 900,
-        backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.98)' : 'rgba(255, 248, 238, 0.94)',
+        width: '100%',
+        zIndex: 999,
+        backgroundColor: isScrolled || mobileMenuOpen ? 'rgba(255, 255, 255, 0.99)' : 'rgba(255, 248, 238, 0.96)',
         backdropFilter: 'blur(12px)',
         WebkitBackdropFilter: 'blur(12px)',
-        borderBottom: isScrolled ? '1px solid rgba(48, 53, 54, 0.08)' : '1px solid transparent',
-        boxShadow: isScrolled ? '0 4px 20px rgba(20, 93, 92, 0.06)' : 'none',
-        transition: 'all 0.3s ease'
+        borderBottom: isScrolled || mobileMenuOpen ? '1px solid rgba(48, 53, 54, 0.08)' : '1px solid transparent',
+        boxShadow: isScrolled || mobileMenuOpen ? '0 4px 20px rgba(20, 93, 92, 0.08)' : 'none',
+        transition: 'background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease'
       }}
     >
+      <style>{`
+        .navbar-container {
+          display: flex !important;
+          align-items: center !important;
+          justify-content: space-between !important;
+          padding: 8px 24px !important;
+          width: 100% !important;
+        }
+        .navbar-logo-link {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          text-decoration: none;
+        }
+        .navbar-logo-img {
+          height: 96px;
+          width: auto;
+          object-fit: contain;
+          display: block;
+          transition: height 0.25s ease, transform 0.25s ease;
+        }
+        @media (max-width: 991px) {
+          .navbar-container {
+            padding: 8px 22px !important;
+          }
+          .navbar-logo-img {
+            height: 80px;
+          }
+        }
+        @media (max-width: 768px) {
+          .navbar-container {
+            padding: 7px 20px !important;
+          }
+          .navbar-logo-img {
+            height: 74px;
+          }
+        }
+        @media (max-width: 480px) {
+          .navbar-container {
+            padding: 6px 18px !important;
+          }
+          .navbar-logo-img {
+            height: 68px;
+          }
+        }
+        @media (min-width: 1060px) {
+          .desktop-nav { display: flex !important; }
+          .mobile-toggle-btn { display: none !important; }
+        }
+      `}</style>
+
       <a href="#main-content" className="skip-link">
         Skip to main content
       </a>
 
-      <div className="container navbar-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <style>{`
-          .navbar-container {
-            padding: 8px 0;
-          }
-          .navbar-logo-img {
-            height: 100px;
-            width: auto;
-            object-fit: contain;
-            display: block;
-            transition: height 0.25s ease, transform 0.25s ease;
-          }
-          @media (max-width: 991px) {
-            .navbar-container {
-              padding: 6px 0;
-            }
-            .navbar-logo-img {
-              height: 60px;
-            }
-          }
-          @media (max-width: 768px) {
-            .navbar-container {
-              padding: 5px 0;
-            }
-            .navbar-logo-img {
-              height: 50px;
-            }
-          }
-          @media (max-width: 480px) {
-            .navbar-container {
-              padding: 4px 0;
-            }
-            .navbar-logo-img {
-              height: 44px;
-            }
-          }
-          @media (min-width: 1060px) {
-            .desktop-nav { display: flex !important; }
-            .mobile-toggle-btn { display: none !important; }
-          }
-        `}</style>
-
+      <div className="container navbar-container">
         {/* Brand Logo */}
         <Link
           to="/"
-          style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none' }}
+          className="navbar-logo-link"
           aria-label="Nest4U Care Services Home"
         >
           <img
@@ -434,23 +446,47 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer Menu & Overlay */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25, ease: 'easeInOut' }}
-            style={{
-              backgroundColor: 'var(--white)',
-              borderBottom: '2px solid var(--beige)',
-              overflow: 'hidden',
-              boxShadow: 'var(--shadow-lg)',
-              maxHeight: 'calc(100vh - 80px)',
-              overflowY: 'auto'
-            }}
-          >
+          <>
+            {/* Darkened Backdrop Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => setMobileMenuOpen(false)}
+              style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                backgroundColor: 'rgba(20, 93, 92, 0.35)',
+                backdropFilter: 'blur(3px)',
+                WebkitBackdropFilter: 'blur(3px)',
+                zIndex: 990
+              }}
+              aria-hidden="true"
+            />
+
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.25, ease: 'easeInOut' }}
+              style={{
+                position: 'relative',
+                zIndex: 998,
+                backgroundColor: 'var(--white)',
+                borderBottom: '2px solid var(--beige)',
+                overflow: 'hidden',
+                boxShadow: 'var(--shadow-lg)',
+                maxHeight: 'calc(100dvh - 75px)',
+                overflowY: 'auto'
+              }}
+            >
             <div className="container" style={{ padding: '1.25rem 1.25rem 2rem 1.25rem' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
                 <NavLink
@@ -645,6 +681,7 @@ export default function Navbar() {
               </div>
             </div>
           </motion.div>
+          </>
         )}
       </AnimatePresence>
     </header>

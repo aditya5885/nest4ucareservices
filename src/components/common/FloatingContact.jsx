@@ -27,6 +27,26 @@ export default function FloatingContact() {
       }}
       aria-label="Quick contact options"
     >
+      <style>{`
+        @media (max-width: 640px) {
+          .floating-contact-container {
+            bottom: 16px !important;
+            right: 14px !important;
+            gap: 10px !important;
+          }
+          .floating-contact-btn-phone {
+            width: 46px !important;
+            height: 46px !important;
+          }
+          .floating-contact-btn-whatsapp {
+            width: 50px !important;
+            height: 50px !important;
+          }
+          .floating-tooltip {
+            display: none !important;
+          }
+        }
+      `}</style>
       {/* Phone Button */}
       <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
         <AnimatePresence>
@@ -36,6 +56,7 @@ export default function FloatingContact() {
               animate={{ opacity: 1, x: 0, scale: 1 }}
               exit={{ opacity: 0, x: 10, scale: 0.95 }}
               transition={{ duration: 0.15 }}
+              className="floating-tooltip"
               style={{
                 position: 'absolute',
                 right: '64px',
@@ -58,6 +79,7 @@ export default function FloatingContact() {
         <motion.a
           href={phoneHref}
           aria-label="Call Nest4U Care Services"
+          className="floating-contact-btn-phone"
           initial={{ scale: 0, opacity: 0, y: 20 }}
           animate={{ scale: 1, opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.2 }}
@@ -95,6 +117,7 @@ export default function FloatingContact() {
               animate={{ opacity: 1, x: 0, scale: 1 }}
               exit={{ opacity: 0, x: 10, scale: 0.95 }}
               transition={{ duration: 0.15 }}
+              className="floating-tooltip"
               style={{
                 position: 'absolute',
                 right: '64px',
@@ -140,6 +163,7 @@ export default function FloatingContact() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="WhatsApp Nest4U Care Services"
+          className="floating-contact-btn-whatsapp"
           initial={{ scale: 0, opacity: 0, y: 20 }}
           animate={{ scale: 1, opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.3 }}

@@ -22,13 +22,13 @@ export default function Footer() {
       <div style={{ height: '4px', background: 'linear-gradient(90deg, var(--gold) 0%, var(--copper) 50%, var(--gold) 100%)' }} />
 
       {/* Main Footer Content */}
-      <div className="container" style={{ paddingTop: '4.5rem', paddingBottom: '3.5rem' }}>
+      <div className="container" style={{ paddingTop: 'clamp(2.75rem, 5vw, 4.5rem)', paddingBottom: 'clamp(2rem, 4vw, 3.5rem)' }}>
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-            gap: '3rem',
-            marginBottom: '3.5rem'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))',
+            gap: 'clamp(2rem, 3.5vw, 3rem)',
+            marginBottom: '3rem'
           }}
         >
           {/* Column 1: Brand & Identity */}

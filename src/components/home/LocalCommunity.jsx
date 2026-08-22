@@ -19,11 +19,11 @@ export default function LocalCommunity() {
             backgroundColor: 'var(--white)',
             borderRadius: '24px',
             border: '1.5px solid rgba(20, 93, 92, 0.1)',
-            padding: 'clamp(2rem, 3.5vw, 3rem)',
+            padding: 'clamp(1.25rem, 3.5vw, 3rem)',
             boxShadow: 'var(--shadow-md)',
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '2.5rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+            gap: '2rem',
             alignItems: 'center'
           }}
         >

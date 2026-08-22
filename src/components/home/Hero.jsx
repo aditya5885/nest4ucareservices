@@ -25,14 +25,36 @@ export default function Hero() {
       </div>
 
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: 'clamp(2.5rem, 5vw, 4.5rem)',
-            alignItems: 'center'
-          }}
-        >
+        <style>{`
+          .hero-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+            gap: clamp(2rem, 4vw, 4.5rem);
+            alignItems: center;
+          }
+          .hero-floating-card {
+            position: absolute;
+            bottom: -20px;
+            left: 24px;
+            background-color: var(--white);
+            padding: 14px 20px;
+            border-radius: 16px;
+            box-shadow: 0 12px 28px rgba(20, 93, 92, 0.14);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid rgba(20, 93, 92, 0.08);
+          }
+          @media (max-width: 640px) {
+            .hero-floating-card {
+              position: static;
+              margin-top: 14px;
+              width: 100%;
+              padding: 12px 16px;
+            }
+          }
+        `}</style>
+        <div className="hero-grid">
           {/* Left Column: Text & CTAs */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -49,10 +71,11 @@ export default function Hero() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.5rem',
-                marginBottom: '1.25rem'
+                marginBottom: '1.25rem',
+                maxWidth: '100%'
               }}
             >
-              <Sparkles size={15} style={{ color: 'var(--copper)' }} />
+              <Sparkles size={15} style={{ color: 'var(--copper)', flexShrink: 0 }} />
               <span>COMPASSIONATE CARE • COMMUNITY • INDEPENDENCE</span>
             </div>
 
@@ -60,7 +83,7 @@ export default function Hero() {
             <h1
               style={{
                 color: 'var(--primary-teal)',
-                fontSize: 'clamp(2.4rem, 4.2vw, 3.8rem)',
+                fontSize: 'clamp(2rem, 4.2vw, 3.8rem)',
                 fontWeight: 800,
                 lineHeight: 1.15,
                 letterSpacing: '-0.025em',
@@ -74,7 +97,7 @@ export default function Hero() {
             {/* Supporting Text */}
             <p
               style={{
-                fontSize: 'clamp(1.05rem, 1.3vw, 1.25rem)',
+                fontSize: 'clamp(1rem, 1.3vw, 1.25rem)',
                 color: 'var(--charcoal-muted)',
                 lineHeight: 1.65,
                 marginBottom: '2rem',
@@ -86,6 +109,7 @@ export default function Hero() {
 
             {/* Hero CTAs */}
             <div
+              className="btn-stack-mobile"
               style={{
                 display: 'flex',
                 flexWrap: 'wrap',
@@ -108,7 +132,7 @@ export default function Hero() {
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))',
                 gap: '1rem',
                 paddingTop: '1.5rem',
                 borderTop: '1px solid rgba(48, 53, 54, 0.1)'
@@ -180,7 +204,7 @@ export default function Hero() {
               style={{
                 position: 'relative',
                 borderRadius: '28px',
-                padding: '12px',
+                padding: 'clamp(6px, 2vw, 12px)',
                 background: 'linear-gradient(135deg, rgba(20, 93, 92, 0.15) 0%, rgba(212, 154, 90, 0.2) 50%, rgba(182, 106, 67, 0.15) 100%)',
                 boxShadow: 'var(--shadow-xl)'
               }}
@@ -209,19 +233,7 @@ export default function Hero() {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.5 }}
-                style={{
-                  position: 'absolute',
-                  bottom: '-20px',
-                  left: '24px',
-                  backgroundColor: 'var(--white)',
-                  padding: '14px 20px',
-                  borderRadius: '16px',
-                  boxShadow: '0 12px 28px rgba(20, 93, 92, 0.14)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '12px',
-                  border: '1px solid rgba(20, 93, 92, 0.08)'
-                }}
+                className="hero-floating-card"
               >
                 <div
                   style={{

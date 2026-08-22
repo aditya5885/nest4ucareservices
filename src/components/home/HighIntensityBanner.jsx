@@ -23,11 +23,11 @@ export default function HighIntensityBanner() {
             backgroundColor: 'var(--white)',
             borderRadius: '24px',
             border: '2px solid rgba(182, 106, 67, 0.2)',
-            padding: 'clamp(2rem, 4vw, 3.5rem)',
+            padding: 'clamp(1.25rem, 4vw, 3.5rem)',
             boxShadow: 'var(--shadow-lg)',
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '3rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
+            gap: 'clamp(1.75rem, 3.5vw, 3rem)',
             alignItems: 'center'
           }}
         >
@@ -45,7 +45,7 @@ export default function HighIntensityBanner() {
               <span>SPECIALISED CLINICAL CARE</span>
             </div>
 
-            <h2 style={{ color: 'var(--primary-teal)', fontSize: 'clamp(1.45rem, 2vw, 1.95rem)', marginBottom: '1rem', lineHeight: '1.25' }}>
+            <h2 style={{ color: 'var(--primary-teal)', fontSize: 'clamp(1.35rem, 2vw, 1.95rem)', marginBottom: '1rem', lineHeight: '1.25' }}>
               High-Intensity Daily Personal Activities
             </h2>
 
@@ -56,7 +56,7 @@ export default function HighIntensityBanner() {
             <div
               style={{
                 backgroundColor: 'var(--cream)',
-                padding: '1.25rem',
+                padding: '1.15rem',
                 borderRadius: '12px',
                 borderLeft: '4px solid var(--copper)',
                 marginBottom: '1.75rem',
@@ -67,11 +67,11 @@ export default function HighIntensityBanner() {
             >
               <AlertCircle size={20} style={{ color: 'var(--copper)', flexShrink: 0, marginTop: '2px' }} />
               <p style={{ fontSize: '0.875rem', color: 'var(--charcoal)', margin: 0, lineHeight: '1.5' }}>
-                <strong>Quality & Safeguards Note:</strong> All high-intensity activities are delivered by workers with verified competencies under individualized care plans, participant-specific health directives, and applicable regulatory frameworks.
+                <strong>Quality &amp; Safeguards Note:</strong> All high-intensity activities are delivered by workers with verified competencies under individualized care plans, participant-specific health directives, and applicable regulatory frameworks.
               </p>
             </div>
 
-            <Link to="/high-intensity-care" className="btn btn-copper btn-lg">
+            <Link to="/high-intensity-care" className="btn btn-copper btn-lg" style={{ width: 'auto' }}>
               <span>Explore High-Intensity Support</span>
               <ArrowRight size={18} />
             </Link>
@@ -86,8 +86,8 @@ export default function HighIntensityBanner() {
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-                gap: '0.875rem'
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))',
+                gap: '0.75rem'
               }}
             >
               {HIGH_INTENSITY_ITEMS.map((item, idx) => (

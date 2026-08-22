@@ -240,8 +240,8 @@ export default function SILPage() {
               style={{
                 width: '100%',
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                gap: '1.25rem',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))',
+                gap: '1rem',
                 textAlign: 'left'
               }}
             >
@@ -435,8 +435,8 @@ export default function SILPage() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '2rem',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+              gap: '1.5rem',
               marginBottom: '4.5rem'
             }}
           >
@@ -451,7 +451,7 @@ export default function SILPage() {
                     backgroundColor: 'var(--white)',
                     borderRadius: '20px',
                     border: '1.5px solid rgba(20, 93, 92, 0.08)',
-                    padding: '2rem',
+                    padding: 'clamp(1.25rem, 3vw, 2rem)',
                     boxShadow: '0 4px 24px rgba(20, 93, 92, 0.05)',
                     display: 'flex',
                     flexDirection: 'column',
@@ -461,7 +461,7 @@ export default function SILPage() {
                   }}
                 >
                   <div>
-                    {/* Top Row: Icon + Index Tag */}
+                    {/* Top Row: Icon + Focus Badge */}
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
                       <div
                         style={{
@@ -472,41 +472,42 @@ export default function SILPage() {
                           color: pillar.accentColor,
                           display: 'flex',
                           alignItems: 'center',
-                          justifyContent: 'center'
+                          justifyContent: 'center',
+                          boxShadow: 'inset 0 0 0 1px rgba(255, 255, 255, 0.6)'
                         }}
                       >
                         <IconComponent size={26} strokeWidth={2.2} />
                       </div>
+                      <span
+                        style={{
+                          fontSize: '0.75rem',
+                          fontWeight: 700,
+                          color: pillar.accentColor,
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.06em',
+                          backgroundColor: pillar.accentBg,
+                          padding: '0.35rem 0.75rem',
+                          borderRadius: 'var(--radius-full)'
+                        }}
+                      >
+                        {pillar.badge}
+                      </span>
                     </div>
 
-                    <h3 style={{ fontSize: '1.25rem', color: 'var(--primary-teal)', marginBottom: '0.75rem', lineHeight: '1.35', fontWeight: 700 }}>
+                    <h3 style={{ fontSize: '1.3rem', color: 'var(--primary-teal)', marginBottom: '0.75rem', lineHeight: '1.3', fontWeight: 700 }}>
                       {pillar.title}
                     </h3>
                     <p style={{ fontSize: '0.95rem', color: 'var(--charcoal-muted)', lineHeight: '1.65', marginBottom: '1.25rem' }}>
                       {pillar.desc}
                     </p>
 
-                    {/* Key Capability Tags */}
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.45rem', marginBottom: '0.5rem' }}>
-                      {pillar.tags.map((tag, tIdx) => (
-                        <span
-                          key={tIdx}
-                          style={{
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '0.35rem',
-                            fontSize: '0.8125rem',
-                            fontWeight: 500,
-                            color: 'var(--charcoal)',
-                            backgroundColor: 'var(--cream)',
-                            border: '1px solid rgba(20, 93, 92, 0.06)',
-                            padding: '0.25rem 0.65rem',
-                            borderRadius: '6px'
-                          }}
-                        >
-                          <CheckCircle2 size={13} style={{ color: pillar.accentColor, flexShrink: 0 }} />
-                          <span>{tag}</span>
-                        </span>
+                    {/* Feature bullet list */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                      {pillar.features.map((feat, fIdx) => (
+                        <div key={fIdx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.875rem', color: 'var(--charcoal)' }}>
+                          <CheckCircle2 size={16} style={{ color: pillar.accentColor, flexShrink: 0, marginTop: '3px' }} />
+                          <span>{feat}</span>
+                        </div>
                       ))}
                     </div>
                   </div>
@@ -514,7 +515,7 @@ export default function SILPage() {
                   {/* Bottom Action */}
                   <div style={{ paddingTop: '1rem', borderTop: '1px solid rgba(48, 53, 54, 0.06)' }}>
                     <Link
-                      to={`/contact?service=Supported%20Independent%20Living%20(SIL)&topic=${encodeURIComponent(pillar.title)}`}
+                      to={`/contact?service=Supported%20Independent%20Living&topic=${encodeURIComponent(pillar.title)}`}
                       style={{
                         display: 'inline-flex',
                         alignItems: 'center',
@@ -522,7 +523,8 @@ export default function SILPage() {
                         fontSize: '0.9rem',
                         fontWeight: 600,
                         color: pillar.accentColor,
-                        textDecoration: 'none'
+                        textDecoration: 'none',
+                        transition: 'gap 0.2s ease'
                       }}
                     >
                       <span>Enquire about this support</span>
@@ -539,11 +541,11 @@ export default function SILPage() {
             style={{
               backgroundColor: 'var(--cream)',
               borderRadius: '24px',
-              padding: 'clamp(2rem, 4vw, 3.5rem)',
+              padding: 'clamp(1.25rem, 4vw, 3.5rem)',
               border: '1.5px solid rgba(20, 93, 92, 0.1)',
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '3rem',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
+              gap: 'clamp(1.75rem, 3.5vw, 3rem)',
               alignItems: 'center'
             }}
           >

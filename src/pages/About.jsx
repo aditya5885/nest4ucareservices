@@ -35,8 +35,8 @@ export default function About() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '3.5rem',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
+              gap: 'clamp(2rem, 4vw, 3.5rem)',
               alignItems: 'center'
             }}
           >
@@ -52,8 +52,6 @@ export default function About() {
                 Whether providing high-intensity clinical care, supporting someone in their first shared living arrangement (SIL), or joining a participant for a weekend community outing across Moreton Bay, we bring warmth, empathy, and uncompromising safety standards to everything we do.
               </p>
 
-
-
               <Link to="/contact" className="btn btn-primary">
                 <span>Speak With Our Team</span>
                 <ArrowRight size={18} />
@@ -66,7 +64,7 @@ export default function About() {
                   borderRadius: '24px',
                   overflow: 'hidden',
                   boxShadow: 'var(--shadow-xl)',
-                  border: '8px solid var(--cream)'
+                  border: 'clamp(4px, 1.5vw, 8px) solid var(--cream)'
                 }}
               >
                 <img
@@ -92,8 +90,8 @@ export default function About() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-              gap: '2rem'
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))',
+              gap: '1.5rem'
             }}
           >
             {(() => {
@@ -116,7 +114,7 @@ export default function About() {
                       backgroundColor: 'var(--white)',
                       borderRadius: '20px',
                       border: '1.5px solid rgba(20, 93, 92, 0.08)',
-                      padding: '2rem 1.75rem',
+                      padding: 'clamp(1.25rem, 3vw, 2rem)',
                       boxShadow: '0 4px 20px rgba(20, 93, 92, 0.05)',
                       display: 'flex',
                       flexDirection: 'column',
@@ -164,8 +162,8 @@ export default function About() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '2rem'
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+              gap: '1.5rem'
             }}
           >
             {/* Card 1: Consistency */}

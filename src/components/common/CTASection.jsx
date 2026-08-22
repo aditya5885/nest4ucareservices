@@ -108,7 +108,7 @@ export default function CTASection({
           </div>
 
           {showContactButtons && (
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
+            <div className="btn-stack-mobile" style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
               <Link
                 to="/contact"
                 className="btn btn-primary btn-lg"

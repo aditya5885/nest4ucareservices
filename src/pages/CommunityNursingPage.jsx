@@ -258,8 +258,8 @@ export default function CommunityNursingPage() {
               style={{
                 width: '100%',
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                gap: '1.25rem',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))',
+                gap: '1rem',
                 textAlign: 'left'
               }}
             >
@@ -481,8 +481,8 @@ export default function CommunityNursingPage() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '2rem',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+              gap: '1.5rem',
               marginBottom: '4.5rem'
             }}
           >
@@ -497,7 +497,7 @@ export default function CommunityNursingPage() {
                     backgroundColor: 'var(--white)',
                     borderRadius: '20px',
                     border: '1.5px solid rgba(20, 93, 92, 0.08)',
-                    padding: '2rem',
+                    padding: 'clamp(1.25rem, 3vw, 2rem)',
                     boxShadow: '0 4px 24px rgba(20, 93, 92, 0.05)',
                     display: 'flex',
                     flexDirection: 'column',
@@ -588,11 +588,11 @@ export default function CommunityNursingPage() {
             style={{
               backgroundColor: 'var(--beige)',
               borderRadius: '24px',
-              padding: 'clamp(2rem, 3.5vw, 3rem)',
+              padding: 'clamp(1.25rem, 3.5vw, 3rem)',
               border: '1.5px solid rgba(20, 93, 92, 0.1)',
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '2.5rem',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+              gap: 'clamp(1.5rem, 3vw, 2.5rem)',
               alignItems: 'center'
             }}
           >

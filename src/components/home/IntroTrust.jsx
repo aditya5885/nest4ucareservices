@@ -53,8 +53,8 @@ export default function IntroTrust() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: 'clamp(2.5rem, 5vw, 4.5rem)',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
+            gap: 'clamp(2rem, 4vw, 4.5rem)',
             alignItems: 'center',
             marginTop: '1rem'
           }}
@@ -73,7 +73,7 @@ export default function IntroTrust() {
                 borderRadius: '28px',
                 overflow: 'hidden',
                 boxShadow: 'var(--shadow-xl)',
-                border: '8px solid var(--cream)',
+                border: 'clamp(4px, 1.5vw, 8px) solid var(--cream)',
                 aspectRatio: '4/3.4'
               }}
             >
@@ -92,16 +92,16 @@ export default function IntroTrust() {
               <div
                 style={{
                   position: 'absolute',
-                  bottom: '20px',
-                  left: '24px',
-                  right: '24px',
+                  bottom: '16px',
+                  left: '16px',
+                  right: '16px',
                   color: 'var(--white)'
                 }}
               >
-                <div style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '1.15rem', color: 'var(--white)', marginBottom: '4px' }}>
+                <div style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '1.1rem', color: 'var(--white)', marginBottom: '4px' }}>
                   Person-Centred Care First
                 </div>
-                <div style={{ fontSize: '0.875rem', color: 'rgba(255, 248, 238, 0.9)' }}>
+                <div style={{ fontSize: '0.825rem', color: 'rgba(255, 248, 238, 0.9)' }}>
                   Listening first, understanding your goals, and providing support tailored to your journey.
                 </div>
               </div>
@@ -111,7 +111,7 @@ export default function IntroTrust() {
             <div
               style={{
                 backgroundColor: 'var(--white)',
-                padding: '16px 20px',
+                padding: '14px 16px',
                 borderRadius: '16px',
                 boxShadow: '0 12px 30px rgba(20, 93, 92, 0.12)',
                 border: '1.5px solid rgba(20, 93, 92, 0.1)',
@@ -119,7 +119,8 @@ export default function IntroTrust() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                gap: '1rem'
+                flexWrap: 'wrap',
+                gap: '0.75rem'
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
@@ -143,7 +144,7 @@ export default function IntroTrust() {
                     Local Caboolture Care Team
                   </div>
                   <div style={{ fontSize: '0.8rem', color: 'var(--charcoal-muted)' }}>
-                    Serving Moreton Bay & surrounding QLD
+                    Serving Moreton Bay &amp; surrounding QLD
                   </div>
                 </div>
               </div>

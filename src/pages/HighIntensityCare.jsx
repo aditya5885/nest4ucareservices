@@ -122,8 +122,8 @@ export default function HighIntensityCare() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '1.75rem',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+              gap: '1.5rem',
               marginBottom: '3.5rem'
             }}
           >
@@ -171,10 +171,10 @@ export default function HighIntensityCare() {
             style={{
               backgroundColor: 'var(--beige)',
               borderRadius: '24px',
-              padding: 'clamp(2rem, 3.5vw, 3rem)',
+              padding: 'clamp(1.25rem, 3.5vw, 3rem)',
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '2.5rem'
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+              gap: 'clamp(1.5rem, 3vw, 2.5rem)'
             }}
           >
             <div>
